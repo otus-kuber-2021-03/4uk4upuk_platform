@@ -1,10 +1,8 @@
-FROM nginx
-
-RUN useradd -u 1001 www-user
-RUN mkdir /app && chown -R www-user:www-user /app/ /var/cache/nginx/ /var/run/
+FROM nginx:latest
 
 COPY ./app.conf /etc/nginx/conf.d/app.conf
 COPY ./homework.html /app/
 
-USER 1001
+RUN usermod -u 1001 nginx
+
 EXPOSE 8000

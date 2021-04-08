@@ -17,8 +17,3 @@ spec:
       containers:
       - name: server
         image: 4uk4upuk/paymentservice:0.0.2
-        ports:
-        - containerPort: 50051
-        env:
-        - name: PORT
-          value: "50051"

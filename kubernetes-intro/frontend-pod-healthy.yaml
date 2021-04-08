@@ -8,7 +8,7 @@ metadata:
   name: frontend
 spec:
   containers:
-  - image: natrofl/frontend:latest
+  - image: 4uk4upuk/frontend:0.1
     name: frontend
     resources: {}
     env:

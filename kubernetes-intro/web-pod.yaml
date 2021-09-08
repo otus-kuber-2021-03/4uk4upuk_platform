@@ -8,6 +8,19 @@ spec:
   containers:
   - name: web
     image: 4uk4upuk/web:1.1
+    ports:
+    - containerPort: 80
+    readinessProbe:
+      httpGet:
+        path: /index.html
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
+    livenessProbe:
+      tcpSocket: 
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
     volumeMounts:
       - mountPath: /app
         name: app
